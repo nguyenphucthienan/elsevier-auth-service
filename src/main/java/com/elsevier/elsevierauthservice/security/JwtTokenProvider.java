@@ -23,10 +23,10 @@ public class JwtTokenProvider {
 
   private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
 
-  @Value("${security.jwt.secret:ElsevierJwtSecretKey}")
+  @Value("${security.jwt.secret}")
   private String jwtSecret;
 
-  @Value("${security.jwt.expiration:#{24*60*60*1000}}")
+  @Value("${security.jwt.expiration}")
   private int jwtExpirationInMs;
 
   public String generateToken(Authentication authentication) {
